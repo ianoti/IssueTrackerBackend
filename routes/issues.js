@@ -59,6 +59,25 @@ router.put('/:id', function(req, res, next) {
     }))
 });
 
+/* Deleting an issue */
+router.delete('/:id', function(req, res, next) {
+    const issueId = req.params.id;
+    Issue.destroy({
+        where: {
+        id: issueId
+        }
+    })
+    .then(issue => res.status(201).json({
+        error: '',
+        data: 'issue',
+        message: 'issue deleted'
+    }))
+    .catch(error => res.json({
+        error,
+        data: []
+    }))
+});
+
 
 router.get('/:id', function(req, res) {});
 router.put('/:id', function(req, res) {});
