@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Issue.associate = function(models) {
     // associations can be defined here
-    models.Issue.belongsTo(models.User, {
-      onDelete: "CASCADE",
-      foreignKey: {
-        allowNull: false
-      }
-    });
+    // models.Issue.belongsTo(models.User, {
+    //   onDelete: "CASCADE",
+    //   foreignKey: {
+    //     allowNull: false
+    //   }
+    // });
   }
   return Issue;
 };
