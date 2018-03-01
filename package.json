@@ -1,13 +1,17 @@
 {
-  "name": "IssueTrackerBackEnd",
-  "version": "1.0.0",
-  "description": "A backend for storing issues and communicating with my Database",
-  "main": "index.js",
-  "repository": "https://github.com/ianoti/IssueTrackerBackend.git",
-  "author": "Ian Otieno <ian.otieno@andela.com>",
-  "license": "MIT",
-  "private": false,
+  "name": "issuetrackerbackend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
   }
 }
