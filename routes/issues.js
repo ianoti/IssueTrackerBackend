@@ -35,6 +35,30 @@ router.post('/', function(req, res, next) {
     }))
 });
 
+/* UPDATING an Issue listing */
+router.put('/:id', function(req, res, next) {
+    const issueId = req.params.id;
+    const { description, severity, assigned } = req.body;
+    Issue.update({
+        description,
+        severity,
+        assigned
+    }, {
+        where: {
+        id: issueId
+        }
+    })
+    .then(issue => res.status(201).json({
+        error: '',
+        data: 'issue',
+        message: 'issue updated'
+    }))
+    .catch(error => res.json({
+        error,
+        data: []
+    }))
+});
+
 
 router.get('/:id', function(req, res) {});
 router.put('/:id', function(req, res) {});
